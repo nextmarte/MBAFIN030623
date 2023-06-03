@@ -196,6 +196,51 @@ elemento <- vetor[2]
 
 \normalsize
 
+# Variáveis
+
+```{r}
+# Variável numérica
+num <- 10
+print(class(num))  # Imprime "numeric"
+
+# Variável de caractere (string)
+char <- "Hello, world!"
+print(class(char))  # Imprime "character"
+
+# Vetor numérico
+vetor_num <- c(1, 2, 3, 4, 5)
+print(class(vetor_num))  # Imprime "numeric"
+
+# Vetor de caracteres
+vetor_char <- c("maçã", "banana", "laranja")
+print(class(vetor_char))  # Imprime "character"
+
+# Fator (variável categórica)
+fator <- factor(c("sim", "não", "sim", "sim"))
+print(class(fator))  # Imprime "factor"
+
+# Lista
+lista <- list(nome = "João", idade = 30, cidade = "São Paulo")
+print(class(lista))  # Imprime "list"
+
+# Matriz
+matriz <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2, ncol = 3)
+print(class(matriz))  # Imprime "matrix"
+
+# Data frame
+data_frame <- data.frame(nome = c("João", "Maria"), idade = c(30, 25))
+print(class(data_frame))  # Imprime "data.frame"
+
+# Vetor lógico (booleano)
+vetor_logico <- c(TRUE, FALSE, TRUE)
+print(class(vetor_logico))  # Imprime "logical"
+
+# Data (tipo de data/hora)
+data_hora <- Sys.time()
+print(class(data_hora))  # Imprime "POSIXct" ou "POSIXt"
+
+```
+
 # Pacotes
 
 ::: columns
@@ -345,14 +390,14 @@ getSymbols(ticker, src = "yahoo")
 :::
 
 # Performance analytics {style="font-size:20px"}
+
 ::: columns
 ::: {.column width="50%" style="font-size: 20px"}
-- O pacote PerformanceAnalytics no R é uma ferramenta para análise de desempenho de investimentos e medidas de risco.
-- Vamos usar em conjunto com o quantmode para obter um grafico de retornos de um ativo por exemplo
+-   O pacote PerformanceAnalytics no R é uma ferramenta para análise de desempenho de investimentos e medidas de risco.
+-   Vamos usar em conjunto com o quantmode para obter um grafico de retornos de um ativo por exemplo
 :::
 
 ::: {.column width="50%" style="font-size: 20px"}
-
 ```{r}
 #| echo: true
 #| message: false
@@ -377,9 +422,9 @@ plot(retornos, main = "Gráfico de Retornos")
 :::
 :::
 
+# Podemos melhorar aquele gráfico {style="font-size:20px"}
 
-# Podemos melhorar aquele gráfico{style="font-size:20px"}
-:::panel-tabset
+::: panel-tabset
 ## Estático ou...
 
 ```{r}
@@ -396,7 +441,6 @@ g1 <- ggplot(data = retornos, aes(x = Date, y = BVSP.Close)) +
 g1
 ```
 
-
 ## Interativo
 
 ```{r}
@@ -404,16 +448,13 @@ g1
 #| message: false
 plotly::ggplotly(g1)
 ```
-
 :::
 
-# Trabalhando com um portifólio ou carteira{style="font-size:20px"}
+# Trabalhando com um portifólio ou carteira {style="font-size:20px"}
 
-- Criar um novo projeto no RStudio cloud (ou posit cloud)
-- Criar um portifólio com 5 ativos ou mais (consultar no yahoo finance)
-- Baixar os dados de preço 
-- Visualizar o gráfico de preços mensais dos ativos
-- Calcular e visualizar os retornos mensais
-- Explorar outras funções (se der tempo)
-
-
+-   Criar um novo projeto no RStudio cloud (ou posit cloud)
+-   Criar um portifólio com 5 ativos ou mais (consultar no yahoo finance)
+-   Baixar os dados de preço
+-   Visualizar o gráfico de preços mensais dos ativos
+-   Calcular e visualizar os retornos mensais
+-   Explorar outras funções (se der tempo)

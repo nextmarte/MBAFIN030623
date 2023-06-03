@@ -592,6 +592,42 @@ M(power query)/TypeScript/Python/R❤️e SQL</li>
 </div>
 </section>
 
+<section id="variáveis" class="title-slide slide level1 center">
+<h1>Variáveis</h1>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "factor"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "list"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "matrix" "array" </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "logical"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "POSIXct" "POSIXt" </code></pre>
+</div>
+</div>
+</section>
+
 <section id="pacotes" class="title-slide slide level1 center">
 <h1>Pacotes</h1>
 <div class="columns">
@@ -626,14 +662,14 @@ M(power query)/TypeScript/Python/R❤️e SQL</li>
 <h1>Como usar?</h1>
 <p>Você pode instalar e carregar pela interface ou…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Instalação de um pacote</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># Carregamento de um pacote</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="co"># Utilização de uma função do pacote</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>ggplot2<span class="sc">::</span><span class="fu">qplot</span>(x, y, <span class="at">data =</span> df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Instalação de um pacote</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3"></a></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># Carregamento de um pacote</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-6"><a href="#cb12-6"></a></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="co"># Utilização de uma função do pacote</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a>ggplot2<span class="sc">::</span><span class="fu">qplot</span>(x, y, <span class="at">data =</span> df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -641,18 +677,18 @@ M(power query)/TypeScript/Python/R❤️e SQL</li>
 <h1>Importando dados</h1>
 <p>É possível importar arquivos usando a interface ou comandos usando alguns pacotes</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb3-2"><a href="#cb3-2"></a>dados_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"dados.csv"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb3-5"><a href="#cb3-5"></a>dados_excel <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"dados.xlsx"</span>)</span>
-<span id="cb3-6"><a href="#cb3-6"></a></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="fu">library</span>(rio)</span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="fu">import</span>(<span class="st">"dados.xlsx"</span>)</span>
-<span id="cb3-9"><a href="#cb3-9"></a></span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="fu">library</span>(httr)</span>
-<span id="cb3-11"><a href="#cb3-11"></a>resposta <span class="ot">&lt;-</span> <span class="fu">GET</span>(<span class="st">"https://api.exemplo.com/dados"</span>)</span>
-<span id="cb3-12"><a href="#cb3-12"></a>dados_api <span class="ot">&lt;-</span> <span class="fu">content</span>(resposta, <span class="st">"parsed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb13-2"><a href="#cb13-2"></a>dados_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"dados.csv"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb13-5"><a href="#cb13-5"></a>dados_excel <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"dados.xlsx"</span>)</span>
+<span id="cb13-6"><a href="#cb13-6"></a></span>
+<span id="cb13-7"><a href="#cb13-7"></a><span class="fu">library</span>(rio)</span>
+<span id="cb13-8"><a href="#cb13-8"></a><span class="fu">import</span>(<span class="st">"dados.xlsx"</span>)</span>
+<span id="cb13-9"><a href="#cb13-9"></a></span>
+<span id="cb13-10"><a href="#cb13-10"></a><span class="fu">library</span>(httr)</span>
+<span id="cb13-11"><a href="#cb13-11"></a>resposta <span class="ot">&lt;-</span> <span class="fu">GET</span>(<span class="st">"https://api.exemplo.com/dados"</span>)</span>
+<span id="cb13-12"><a href="#cb13-12"></a>dados_api <span class="ot">&lt;-</span> <span class="fu">content</span>(resposta, <span class="st">"parsed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -677,23 +713,23 @@ M(power query)/TypeScript/Python/R❤️e SQL</li>
 <section id="exemplo-de-aplicação-do-tidyverse" class="title-slide slide level1 center" style="font-size:20px">
 <h1>Exemplo de aplicação do tidyverse</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># Carregar o conjunto de dados "mpg"</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">data</span>(mpg)</span>
-<span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="co"># Manipulação de dados usando dplyr</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a>dados_filtrados <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">4</span> <span class="sc">&amp;</span> drv <span class="sc">==</span> <span class="st">"f"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a>  <span class="fu">select</span>(manufacturer, model, hwy)</span>
-<span id="cb4-10"><a href="#cb4-10"></a></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="co"># Visualização usando ggplot2</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="fu">ggplot</span>(dados_filtrados, <span class="fu">aes</span>(<span class="at">x =</span> manufacturer, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Fabricante"</span>, <span class="at">y =</span> <span class="st">"Consumo de combustível (mpg)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="co"># Carregar o conjunto de dados "mpg"</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="fu">data</span>(mpg)</span>
+<span id="cb14-5"><a href="#cb14-5"></a></span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="co"># Manipulação de dados usando dplyr</span></span>
+<span id="cb14-7"><a href="#cb14-7"></a>dados_filtrados <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">4</span> <span class="sc">&amp;</span> drv <span class="sc">==</span> <span class="st">"f"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-9"><a href="#cb14-9"></a>  <span class="fu">select</span>(manufacturer, model, hwy)</span>
+<span id="cb14-10"><a href="#cb14-10"></a></span>
+<span id="cb14-11"><a href="#cb14-11"></a><span class="co"># Visualização usando ggplot2</span></span>
+<span id="cb14-12"><a href="#cb14-12"></a><span class="fu">ggplot</span>(dados_filtrados, <span class="fu">aes</span>(<span class="at">x =</span> manufacturer, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
+<span id="cb14-13"><a href="#cb14-13"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb14-14"><a href="#cb14-14"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Fabricante"</span>, <span class="at">y =</span> <span class="st">"Consumo de combustível (mpg)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="Apresentacao_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<img data-src="Apresentacao_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
 
 <section id="dados-de-preço-de-ativos-usando-o-pacote-quantmode" class="title-slide slide level1 center" style="font-size:20px">
 <h1>Dados de preço de ativos usando o pacote quantmode</h1>
@@ -713,14 +749,14 @@ M(power query)/TypeScript/Python/R❤️e SQL</li>
 </ul>
 </div><div class="column" style="font-size: 20px">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(quantmod)</span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a>ticker <span class="ot">&lt;-</span> <span class="st">"^BVSP"</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">getSymbols</span>(ticker, <span class="at">src =</span> <span class="st">"yahoo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">library</span>(quantmod)</span>
+<span id="cb15-2"><a href="#cb15-2"></a></span>
+<span id="cb15-3"><a href="#cb15-3"></a>ticker <span class="ot">&lt;-</span> <span class="st">"^BVSP"</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="fu">getSymbols</span>(ticker, <span class="at">src =</span> <span class="st">"yahoo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "BVSP"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>(dados_precos <span class="ot">&lt;-</span> BVSP<span class="sc">$</span>BVSP.Close)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>(dados_precos <span class="ot">&lt;-</span> BVSP<span class="sc">$</span>BVSP.Close)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           BVSP.Close
 2007-01-02      45383
@@ -760,25 +796,25 @@ M(power query)/TypeScript/Python/R❤️e SQL</li>
 </ul>
 </div><div class="column" style="font-size: 20px">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(PerformanceAnalytics)</span>
-<span id="cb9-2"><a href="#cb9-2"></a></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="co"># Baixando dados de preços históricos</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="fu">getSymbols</span>(<span class="st">"^BVSP"</span>,</span>
-<span id="cb9-5"><a href="#cb9-5"></a>           <span class="at">from =</span> <span class="st">"2023-04-30"</span>,</span>
-<span id="cb9-6"><a href="#cb9-6"></a>             <span class="at">to =</span> <span class="st">"2023-06-02"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">library</span>(PerformanceAnalytics)</span>
+<span id="cb19-2"><a href="#cb19-2"></a></span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="co"># Baixando dados de preços históricos</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="fu">getSymbols</span>(<span class="st">"^BVSP"</span>,</span>
+<span id="cb19-5"><a href="#cb19-5"></a>           <span class="at">from =</span> <span class="st">"2023-04-30"</span>,</span>
+<span id="cb19-6"><a href="#cb19-6"></a>             <span class="at">to =</span> <span class="st">"2023-06-02"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "BVSP"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Calculando retornos diários</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>retornos <span class="ot">&lt;-</span> <span class="fu">Return.calculate</span>(<span class="fu">Cl</span>(BVSP))</span>
-<span id="cb11-3"><a href="#cb11-3"></a></span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="co"># Calculando retorno anualizado</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>retorno_anualizado <span class="ot">&lt;-</span> <span class="fu">Return.annualized</span>(retornos, <span class="at">scale =</span> <span class="dv">252</span>)</span>
-<span id="cb11-6"><a href="#cb11-6"></a></span>
-<span id="cb11-7"><a href="#cb11-7"></a><span class="co"># Criando gráfico de retornos</span></span>
-<span id="cb11-8"><a href="#cb11-8"></a><span class="fu">plot</span>(retornos, <span class="at">main =</span> <span class="st">"Gráfico de Retornos"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Calculando retornos diários</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>retornos <span class="ot">&lt;-</span> <span class="fu">Return.calculate</span>(<span class="fu">Cl</span>(BVSP))</span>
+<span id="cb21-3"><a href="#cb21-3"></a></span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="co"># Calculando retorno anualizado</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a>retorno_anualizado <span class="ot">&lt;-</span> <span class="fu">Return.annualized</span>(retornos, <span class="at">scale =</span> <span class="dv">252</span>)</span>
+<span id="cb21-6"><a href="#cb21-6"></a></span>
+<span id="cb21-7"><a href="#cb21-7"></a><span class="co"># Criando gráfico de retornos</span></span>
+<span id="cb21-8"><a href="#cb21-8"></a><span class="fu">plot</span>(retornos, <span class="at">main =</span> <span class="st">"Gráfico de Retornos"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="Apresentacao_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+<p><img data-src="Apresentacao_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -792,25 +828,25 @@ M(power query)/TypeScript/Python/R❤️e SQL</li>
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>retornos <span class="ot">&lt;-</span> timetk<span class="sc">::</span><span class="fu">tk_tbl</span>(retornos, <span class="at">rename_index =</span><span class="st">"Date"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">drop_na</span>()</span>
-<span id="cb12-3"><a href="#cb12-3"></a></span>
-<span id="cb12-4"><a href="#cb12-4"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> retornos, <span class="fu">aes</span>(<span class="at">x =</span> Date, <span class="at">y =</span> BVSP.Close)) <span class="sc">+</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Gráfico de Retornos"</span>, <span class="at">x =</span> <span class="st">"Data"</span>, <span class="at">y =</span> <span class="st">"Retornos"</span>) <span class="sc">+</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb12-8"><a href="#cb12-8"></a>g1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>retornos <span class="ot">&lt;-</span> timetk<span class="sc">::</span><span class="fu">tk_tbl</span>(retornos, <span class="at">rename_index =</span><span class="st">"Date"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb22-3"><a href="#cb22-3"></a></span>
+<span id="cb22-4"><a href="#cb22-4"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> retornos, <span class="fu">aes</span>(<span class="at">x =</span> Date, <span class="at">y =</span> BVSP.Close)) <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Gráfico de Retornos"</span>, <span class="at">x =</span> <span class="st">"Data"</span>, <span class="at">y =</span> <span class="st">"Retornos"</span>) <span class="sc">+</span></span>
+<span id="cb22-7"><a href="#cb22-7"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb22-8"><a href="#cb22-8"></a>g1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="Apresentacao_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+<p><img data-src="Apresentacao_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
 </div>
 </div>
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>plotly<span class="sc">::</span><span class="fu">ggplotly</span>(g1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>plotly<span class="sc">::</span><span class="fu">ggplotly</span>(g1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-af26c0a600a9ab3331ba" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-af26c0a600a9ab3331ba">{"x":{"data":[{"x":[19480,19481,19482,19485,19486,19487,19488,19489,19492,19493,19494,19495,19496,19499,19500,19501,19502,19503,19506,19507,19508,19509],"y":[-0.00127542260637514,0.00370344902109099,0.0291072092704603,0.00850230151786047,0.0101092020142963,0.0031181731613048,0.00751991661082574,0.00192137156370076,0.00520910163740962,-0.0076585128727219,0.0117012033939035,0.00591997076557638,0.00578522904784395,-0.00480382861528739,-0.00257682850480434,-0.0102702653530915,0.0115257352941176,0.00774165409707961,-0.00516653742809225,-0.0123807020565017,-0.00579992107702332,0.0205842987030969],"text":["Date: 2023-05-03<br />BVSP.Close: -0.001275423","Date: 2023-05-04<br />BVSP.Close:  0.003703449","Date: 2023-05-05<br />BVSP.Close:  0.029107209","Date: 2023-05-08<br />BVSP.Close:  0.008502302","Date: 2023-05-09<br />BVSP.Close:  0.010109202","Date: 2023-05-10<br />BVSP.Close:  0.003118173","Date: 2023-05-11<br />BVSP.Close:  0.007519917","Date: 2023-05-12<br />BVSP.Close:  0.001921372","Date: 2023-05-15<br />BVSP.Close:  0.005209102","Date: 2023-05-16<br />BVSP.Close: -0.007658513","Date: 2023-05-17<br />BVSP.Close:  0.011701203","Date: 2023-05-18<br />BVSP.Close:  0.005919971","Date: 2023-05-19<br />BVSP.Close:  0.005785229","Date: 2023-05-22<br />BVSP.Close: -0.004803829","Date: 2023-05-23<br />BVSP.Close: -0.002576829","Date: 2023-05-24<br />BVSP.Close: -0.010270265","Date: 2023-05-25<br />BVSP.Close:  0.011525735","Date: 2023-05-26<br />BVSP.Close:  0.007741654","Date: 2023-05-29<br />BVSP.Close: -0.005166537","Date: 2023-05-30<br />BVSP.Close: -0.012380702","Date: 2023-05-31<br />BVSP.Close: -0.005799921","Date: 2023-06-01<br />BVSP.Close:  0.020584299"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":48.1461187214612,"r":7.30593607305936,"b":44.5662100456621,"l":54.7945205479452},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"Gráfico de Retornos","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[19478.55,19510.45],"tickmode":"array","ticktext":["mai 08","mai 15","mai 22","mai 29"],"tickvals":[19485,19492,19499,19506],"categoryorder":"array","categoryarray":["mai 08","mai 15","mai 22","mai 29"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Data","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.0144550976228498,0.0311816048368084],"tickmode":"array","ticktext":["-0.01","0.00","0.01","0.02","0.03"],"tickvals":[-0.01,0,0.01,0.02,0.03],"categoryorder":"array","categoryarray":["-0.01","0.00","0.01","0.02","0.03"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Retornos","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"8e7c3896586":{"x":{},"y":{},"type":"scatter"}},"cur_data":"8e7c3896586","visdat":{"8e7c3896586":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0525d456e5e2907db55a" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-0525d456e5e2907db55a">{"x":{"data":[{"x":[19480,19481,19482,19485,19486,19487,19488,19489,19492,19493,19494,19495,19496,19499,19500,19501,19502,19503,19506,19507,19508,19509],"y":[-0.00127542260637514,0.00370344902109099,0.0291072092704603,0.00850230151786047,0.0101092020142963,0.0031181731613048,0.00751991661082574,0.00192137156370076,0.00520910163740962,-0.0076585128727219,0.0117012033939035,0.00591997076557638,0.00578522904784395,-0.00480382861528739,-0.00257682850480434,-0.0102702653530915,0.0115257352941176,0.00774165409707961,-0.00516653742809225,-0.0123807020565017,-0.00579992107702332,0.0205842987030969],"text":["Date: 2023-05-03<br />BVSP.Close: -0.001275423","Date: 2023-05-04<br />BVSP.Close:  0.003703449","Date: 2023-05-05<br />BVSP.Close:  0.029107209","Date: 2023-05-08<br />BVSP.Close:  0.008502302","Date: 2023-05-09<br />BVSP.Close:  0.010109202","Date: 2023-05-10<br />BVSP.Close:  0.003118173","Date: 2023-05-11<br />BVSP.Close:  0.007519917","Date: 2023-05-12<br />BVSP.Close:  0.001921372","Date: 2023-05-15<br />BVSP.Close:  0.005209102","Date: 2023-05-16<br />BVSP.Close: -0.007658513","Date: 2023-05-17<br />BVSP.Close:  0.011701203","Date: 2023-05-18<br />BVSP.Close:  0.005919971","Date: 2023-05-19<br />BVSP.Close:  0.005785229","Date: 2023-05-22<br />BVSP.Close: -0.004803829","Date: 2023-05-23<br />BVSP.Close: -0.002576829","Date: 2023-05-24<br />BVSP.Close: -0.010270265","Date: 2023-05-25<br />BVSP.Close:  0.011525735","Date: 2023-05-26<br />BVSP.Close:  0.007741654","Date: 2023-05-29<br />BVSP.Close: -0.005166537","Date: 2023-05-30<br />BVSP.Close: -0.012380702","Date: 2023-05-31<br />BVSP.Close: -0.005799921","Date: 2023-06-01<br />BVSP.Close:  0.020584299"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":48.1461187214612,"r":7.30593607305936,"b":44.5662100456621,"l":54.7945205479452},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"Gráfico de Retornos","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[19478.55,19510.45],"tickmode":"array","ticktext":["mai 08","mai 15","mai 22","mai 29"],"tickvals":[19485,19492,19499,19506],"categoryorder":"array","categoryarray":["mai 08","mai 15","mai 22","mai 29"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Data","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.0144550976228498,0.0311816048368084],"tickmode":"array","ticktext":["-0.01","0.00","0.01","0.02","0.03"],"tickvals":[-0.01,0,0.01,0.02,0.03],"categoryorder":"array","categoryarray":["-0.01","0.00","0.01","0.02","0.03"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Retornos","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"8e5049cb513d":{"x":{},"y":{},"type":"scatter"}},"cur_data":"8e5049cb513d","visdat":{"8e5049cb513d":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
