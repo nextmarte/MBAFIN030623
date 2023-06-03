@@ -199,6 +199,10 @@ elemento <- vetor[2]
 # Variáveis
 
 ```{r}
+
+#| echo: true
+#| message: false
+#| eval: false
 # Variável numérica
 num <- 10
 print(class(num))  # Imprime "numeric"
